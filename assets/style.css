@@ -1,0 +1,38 @@
+:root {
+  --accent: #2dd4bf;
+  --warning: #f97316;
+  --danger: #f43f5e;
+  --surface: #111827;
+}
+
+.stApp {
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.96), rgba(17, 24, 39, 0.98)),
+    #0f172a;
+}
+
+h1, h2, h3 {
+  letter-spacing: 0;
+}
+
+[data-testid="stMetric"] {
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+[data-testid="stMetricValue"] {
+  color: var(--accent);
+}
+
+.stDataFrame {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+section[data-testid="stSidebar"] {
+  background: #0b1120;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
