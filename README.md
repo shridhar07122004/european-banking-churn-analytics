@@ -178,26 +178,11 @@ The app will open at:
 http://localhost:8501
 ```
 
-## Deployment
+## Live Demo
 
-This project is ready for Streamlit Community Cloud deployment.
+View the deployed Streamlit dashboard here:
 
-Deployment settings:
-
-```text
-Repository: shridhar07122004/european-banking-churn-analytics
-Branch: main
-Main file path: app.py
-```
-
-Steps:
-
-1. Go to `https://share.streamlit.io`
-2. Click `Create app`
-3. Select the GitHub repository
-4. Select branch `main`
-5. Enter `app.py` as the main file path
-6. Click `Deploy`
+[https://european-bankingchurnanalytics.streamlit.app/](https://european-bankingchurnanalytics.streamlit.app/)
 
 ## Business Insights Supported
 
@@ -224,4 +209,3 @@ The dashboard is designed to help banking teams:
 Shridhar Kalasgonda
 
 GitHub: [shridhar07122004](https://github.com/shridhar07122004)
-
