@@ -1,3 +1,14 @@
+---
+title: European Banking Churn Analytics
+emoji: 📊
+colorFrom: teal
+colorTo: blue
+sdk: streamlit
+sdk_version: 1.57.0
+app_file: app.py
+pinned: false
+---
+
 # Customer Segmentation & Churn Pattern Analytics in European Banking
 
 An end-to-end data analytics project that studies customer churn patterns in a European banking dataset. The project combines data cleaning, feature engineering, KPI design, customer segmentation, and an interactive Streamlit dashboard to help identify high-risk customer groups and support retention strategy decisions.
