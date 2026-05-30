@@ -1,7 +1,7 @@
 ---
 title: European Banking Churn Analytics
 emoji: 📊
-colorFrom: teal
+colorFrom: green
 colorTo: blue
 sdk: streamlit
 sdk_version: 1.57.0
