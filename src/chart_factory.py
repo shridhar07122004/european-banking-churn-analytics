@@ -23,7 +23,15 @@ def apply_theme(fig: go.Figure) -> go.Figure:
 
 
 def bar(df: pd.DataFrame, x: str, y: str, title: str, color: str | None = None) -> go.Figure:
-    fig = px.bar(df, x=x, y=y, color=color, title=title, text_auto=".1f")
+    fig = px.bar(df, x=x, y=y, color=color, title=title, text=y)
+    if "rate" in y.lower() or y.lower().endswith("%"):
+        fig.update_traces(texttemplate="%{y:.1f}%", textposition="outside", cliponaxis=False)
+        fig.update_yaxes(ticksuffix="%")
+    elif "exposure" in y.lower() or "balance" in y.lower():
+        fig.update_traces(texttemplate="$%{y:,.0f}", textposition="outside", cliponaxis=False)
+        fig.update_yaxes(tickprefix="$", tickformat="~s")
+    else:
+        fig.update_traces(texttemplate="%{y:,.1f}", textposition="outside", cliponaxis=False)
     return apply_theme(fig)
 
 
@@ -87,4 +95,3 @@ def scatter(df: pd.DataFrame, x: str, y: str, title: str, color: str) -> go.Figu
         hover_data=["Geography", "Age", "NumOfProducts", "Customer Value Score"],
     )
     return apply_theme(fig)
-

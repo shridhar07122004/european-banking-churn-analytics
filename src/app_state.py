@@ -10,14 +10,14 @@ from src.feature_engineer import add_features
 
 def load_dataset_ui() -> tuple[pd.DataFrame | None, dict | None]:
     df, report = load_default_dataset()
-    uploaded = st.sidebar.file_uploader("Upload Churn_Modelling.csv", type=["csv"])
+    uploaded = st.sidebar.file_uploader("Upload banking CSV", type=["csv"])
     if uploaded is not None:
         df = load_csv(uploaded)
         report = validate_dataframe(df)
 
     if df is None:
         st.info(
-            "Add `data/Churn_Modelling.csv` or upload the CSV from the sidebar to start the dashboard."
+            "Add `data/European_Bank.csv` or upload the CSV from the sidebar to start the dashboard."
         )
         return None, None
 
@@ -61,8 +61,29 @@ def prepare_page(title: str, subtitle: str) -> pd.DataFrame | None:
         initial_sidebar_state="expanded",
     )
     inject_css()
-    st.title(title)
-    st.caption(subtitle)
+    st.sidebar.markdown(
+        """
+        <div class="sidebar-brand">
+          <div class="brand-mark">EB</div>
+          <div>
+            <div class="brand-title">European Bank</div>
+            <div class="brand-subtitle">Churn Intelligence</div>
+          </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        f"""
+        <section class="page-hero">
+          <div class="hero-kicker">Banking Analytics Suite</div>
+          <h1>{title}</h1>
+          <p>{subtitle}</p>
+          <div class="hero-rule"></div>
+        </section>
+        """,
+        unsafe_allow_html=True,
+    )
     df, report = load_dataset_ui()
     if report:
         with st.sidebar.expander("Data validation"):
